@@ -16,14 +16,20 @@ const getClassTeachers = async () => {
 }
 
 const addClassTeacher = async (payload) => {
+
     const { className, section, teacher } = payload;
     const query = `
     INSERT INTO class_teachers (class_name, section_name, teacher_id)
     VALUES($1, $2, $3)
     `;
-    const queryParams = [className, section, teacher];
-    const { rowCount } = await processDBRequest({ query, queryParams });
-    return rowCount;
+    try{
+        const queryParams = [className, section, teacher];
+        const { rowCount } = await processDBRequest({ query, queryParams });
+        return rowCount;
+    } catch (error) {
+        console.error("Error adding class teacher:", error);
+        return 0;
+    }
 }
 
 const getClassTeacherById = async (id) => {

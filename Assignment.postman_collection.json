@@ -1,0 +1,756 @@
+{
+	"info": {
+		"_postman_id": "384ed997-3b3f-4763-83a4-40a3521b9138",
+		"name": "Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18546529"
+	},
+	"item": [
+		{
+			"name": "Students",
+			"item": [
+				{
+					"name": "Get Students",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-csrf-token",
+								"value": "{{csrfToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/api/v1/students",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"students"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "access-token",
+										"value": "{{ACCESS_TOKEN}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{HOST}}/api/v1/students",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"students"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:5173"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "111"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"6f-34R7fcVFtEPid4XrDDuAP9dVLVk\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 28 Nov 2025 20:16:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"students\": [\n        {\n            \"id\": 11,\n            \"name\": \"John Doe\",\n            \"email\": \"john.doe@example.com\",\n            \"lastLogin\": null,\n            \"systemAccess\": false\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Student",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"operationType\": \"add\",\n    \"reporter_id\": 7,\n    \"name\": \"John Doe\",\n    \"email\": \"john.doe@example.com\",\n    \"gender\": \"Male\",\n    \"phone\": \"9876543210\",\n    \"dob\": \"2008-05-15\",\n    \"currentAddress\": \"123 Main Street, City, State\",\n    \"permanentAddress\": \"456 Oak Avenue, City, State\",\n    \"fatherName\": \"James Doe\",\n    \"fatherPhone\": \"9876543200\",\n    \"motherName\": \"Mary Doe\",\n    \"motherPhone\": \"9876543201\",\n    \"guardianName\": \"James Doe\",\n    \"guardianPhone\": \"9876543200\",\n    \"relationOfGuardian\": \"Father\",\n    \"class\": \"Physics\",\n    \"section\": \"B\",\n    \"roll\": 5,\n    \"admissionDate\": \"2023-06-01\",\n    \"systemAccess\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/api/v1/students",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"students"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "access-token",
+										"value": "{{ACCESS_TOKEN}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"operationType\": \"add\",\n    \"reporter_id\": 7,\n    \"name\": \"John Doe\",\n    \"email\": \"john.doe@example.com\",\n    \"gender\": \"Male\",\n    \"phone\": \"9876543210\",\n    \"dob\": \"2008-05-15\",\n    \"currentAddress\": \"123 Main Street, City, State\",\n    \"permanentAddress\": \"456 Oak Avenue, City, State\",\n    \"fatherName\": \"James Doe\",\n    \"fatherPhone\": \"9876543200\",\n    \"motherName\": \"Mary Doe\",\n    \"motherPhone\": \"9876543201\",\n    \"guardianName\": \"James Doe\",\n    \"guardianPhone\": \"9876543200\",\n    \"relationOfGuardian\": \"Father\",\n    \"class\": \"Physics\",\n    \"section\": \"B\",\n    \"roll\": 5,\n    \"admissionDate\": \"2023-06-01\",\n    \"systemAccess\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST}}/api/v1/students",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"students"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:5173"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "67"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"43-Tvq2tIHaugWxgpCF4cqbgGb/lwg\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 28 Nov 2025 20:16:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Student added, but failed to send verification email.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Teacher",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"class\":\"Physics\",\n    \"section\":\"B\",\n    \"teacher\":7\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/api/v1/class-teachers",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"class-teachers"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 Ok",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "access-token",
+										"value": "{{ACCESS_TOKEN}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"class\":\"Physics\",\n    \"section\":\"B\",\n    \"teacher\":7\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST}}/api/v1/class-teachers",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"class-teachers"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:5173"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "46"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2e-C/SXItzHc7NaTotkb8qKNXClQHs\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 28 Nov 2025 20:04:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Class teacher added successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Student",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"reporter_id\": 7,\n    \"name\": \"Raghupathi\",\n    \"email\": \"Raghupathi@example.com\",\n    \"gender\": \"Male\",\n    \"phone\": \"9876543210\",\n    \"dob\": \"2008-05-15\",\n    \"currentAddress\": \"123 Main Street, City, State\",\n    \"permanentAddress\": \"456 Oak Avenue, City, State\",\n    \"fatherName\": \"James Doe\",\n    \"fatherPhone\": \"9876543200\",\n    \"motherName\": \"Mary Doe\",\n    \"motherPhone\": \"9876543201\",\n    \"guardianName\": \"James Doe\",\n    \"guardianPhone\": \"9876543200\",\n    \"relationOfGuardian\": \"Father\",\n    \"class\": \"Physics\",\n    \"section\": \"B\",\n    \"roll\": 5,\n    \"admissionDate\": \"2023-06-01\",\n    \"systemAccess\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/api/v1/students/11",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"students",
+								"11"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "access-token",
+										"value": "{{ACCESS_TOKEN}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"reporter_id\": 7,\n    \"name\": \"Raghupathi-1\",\n    \"email\": \"Raghupathi@example.com\",\n    \"gender\": \"Male\",\n    \"phone\": \"9876543210\",\n    \"dob\": \"2008-05-15\",\n    \"currentAddress\": \"123 Main Street, City, State\",\n    \"permanentAddress\": \"456 Oak Avenue, City, State\",\n    \"fatherName\": \"James Doe\",\n    \"fatherPhone\": \"9876543200\",\n    \"motherName\": \"Mary Doe\",\n    \"motherPhone\": \"9876543201\",\n    \"guardianName\": \"James Doe\",\n    \"guardianPhone\": \"9876543200\",\n    \"relationOfGuardian\": \"Father\",\n    \"class\": \"Physics\",\n    \"section\": \"B\",\n    \"roll\": 5,\n    \"admissionDate\": \"2023-06-01\",\n    \"systemAccess\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST}}/api/v1/students/11",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"students",
+										"11"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:5173"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "42"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a-Sb3pmQ59617vj0ChD+5fmuNFa60\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 28 Nov 2025 20:21:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Student updated successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Student By ID",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "200 Ok",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "access-token",
+										"value": "{{ACCESS_TOKEN}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"operationType\": \"add\",\n    \"reporter_id\": 7,\n    \"name\": \"John Doe\",\n    \"email\": \"john.doe@example.com\",\n    \"gender\": \"Male\",\n    \"phone\": \"9876543210\",\n    \"dob\": \"2008-05-15\",\n    \"currentAddress\": \"123 Main Street, City, State\",\n    \"permanentAddress\": \"456 Oak Avenue, City, State\",\n    \"fatherName\": \"James Doe\",\n    \"fatherPhone\": \"9876543200\",\n    \"motherName\": \"Mary Doe\",\n    \"motherPhone\": \"9876543201\",\n    \"guardianName\": \"James Doe\",\n    \"guardianPhone\": \"9876543200\",\n    \"relationOfGuardian\": \"Father\",\n    \"class\": \"Physics\",\n    \"section\": \"B\",\n    \"roll\": 5,\n    \"admissionDate\": \"2023-06-01\",\n    \"systemAccess\": true\n}"
+								},
+								"url": {
+									"raw": "{{HOST}}/api/v1/students/11",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"students",
+										"11"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:5173"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "548"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"224-BAmNFNg24dkXvB+che7abXoVziA\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 28 Nov 2025 20:23:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 11,\n    \"name\": \"Raghupathi-1\",\n    \"email\": \"Raghupathi@example.com\",\n    \"systemAccess\": true,\n    \"phone\": \"9876543210\",\n    \"gender\": \"Male\",\n    \"dob\": \"2008-05-14T18:30:00.000Z\",\n    \"class\": \"Physics\",\n    \"section\": \"B\",\n    \"roll\": 5,\n    \"fatherName\": \"James Doe\",\n    \"fatherPhone\": \"9876543200\",\n    \"motherName\": \"Mary Doe\",\n    \"motherPhone\": \"9876543201\",\n    \"guardianName\": \"James Doe\",\n    \"guardianPhone\": \"9876543200\",\n    \"relationOfGuardian\": \"Father\",\n    \"currentAddress\": \"123 Main Street, City, State\",\n    \"permanentAddress\": \"456 Oak Avenue, City, State\",\n    \"admissionDate\": \"2023-05-31T18:30:00.000Z\",\n    \"reporterName\": \"Stella\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Change status",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\":true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/api/v1/students/11/status",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"students",
+								"11",
+								"status"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "access-token",
+										"value": "{{ACCESS_TOKEN}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"status\":true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST}}/api/v1/students/11/status",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"students",
+										"11",
+										"status"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:5173"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "49"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"31-QjP4V9BFEj+x+uzlQaqBgisxxUE\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 28 Nov 2025 20:42:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Student status changed successfully\"\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "apikey",
+				"apikey": [
+					{
+						"key": "value",
+						"value": "{{csrfToken}}",
+						"type": "string"
+					},
+					{
+						"key": "key",
+						"value": "x-csrf-token",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const csrfToken = pm.cookies.get('csrfToken');",
+							"console.log(csrfToken)",
+							"pm.environment.set('csrfToken',csrfToken);"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"admin@school-admin.com\",\n    \"password\": \"3OU4zn3q6Zh9\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}/api/v1/auth/login",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

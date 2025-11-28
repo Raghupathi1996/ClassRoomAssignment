@@ -11,6 +11,7 @@ const fetchAllClassTeachers = async () => {
 }
 
 const addNewClassTeacher = async (payload) => {
+    console.log("Payload in addNewClassTeacher:", payload);
     const affectedRow = await addClassTeacher(payload);
     if (affectedRow <= 0) {
         throw new ApiError(500, "Unable to add class teacher");

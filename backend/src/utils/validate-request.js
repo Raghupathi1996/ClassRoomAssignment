@@ -5,7 +5,7 @@ const validateRequest = (schema) => (req, res, next) => {
             query: req.query,
             params: req.params
         });
-
+            console.log("Mid request body:", req.body);
         next();
     } catch (error) {
         const formattedErrors = error.errors.map((err) => ({

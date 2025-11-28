@@ -148,6 +148,7 @@ const getNewAccessAndCsrfToken = async (refreshToken) => {
     };
   } catch (error) {
     await client.query("ROLLBACK");
+    console.log(error);
     throw error;
   } finally {
     client.release();

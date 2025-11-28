@@ -13,8 +13,11 @@ app.use(cors)
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use(cookieParser());
-
-app.use("/api/v1", v1Routes);
+try {
+    app.use("/api/v1", v1Routes);
+} catch (error) {
+    console.error("Error setting up routes:", error);
+}
 
 app.use(handle404Error);
 app.use(handleGlobalError);

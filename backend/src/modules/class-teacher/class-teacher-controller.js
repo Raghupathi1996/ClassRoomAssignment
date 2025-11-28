@@ -13,6 +13,7 @@ const handleGetClassTeacherDetail = asyncHandler(async (req, res) => {
 });
 
 const handleAddClassTeacher = asyncHandler(async (req, res) => {
+    console.log("Request body in handleAddClassTeacher:", req.body);
     const { class: className, section, teacher } = req.body;
     const message = await addNewClassTeacher({ className, section, teacher });
     res.json(message);
